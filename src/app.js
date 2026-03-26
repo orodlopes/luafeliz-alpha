@@ -42,6 +42,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderProductCard = (product) => {
     const discount = calculateDiscount(product.preco_antigo, product.preco_atual);
     
+    // Lógica de Simulação de Gatilhos Mentais
+    const triggerType = Math.floor(Math.random() * 2);
+    let triggerHtml = '';
+    
+    if (triggerType === 0) {
+      const leftCount = Math.floor(Math.random() * (8 - 2 + 1)) + 2;
+      triggerHtml = `
+        <div class="mt-1 mb-3">
+          <div class="flex items-center gap-1 text-[10px] sm:text-xs font-bold text-[#EE4D2D] mb-1">
+            <span>🔥</span>
+            <span>Só mais ${leftCount} disponíveis</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-1.5 sm:h-2">
+            <div class="bg-[#EE4D2D] h-1.5 sm:h-2 rounded-full" style="width: 90%"></div>
+          </div>
+        </div>
+      `;
+    } else {
+      const soldCount = Math.floor(Math.random() * (2500 - 1000 + 1)) + 1000;
+      triggerHtml = `
+        <div class="mt-1 mb-3">
+          <div class="flex items-center gap-1 text-[10px] sm:text-xs font-bold text-[#EE4D2D] mb-1">
+            <span>👥</span>
+            <span>Popular: ${soldCount} vendidos</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-1.5 sm:h-2">
+            <div class="bg-[#EE4D2D] h-1.5 sm:h-2 rounded-full" style="width: 60%"></div>
+          </div>
+        </div>
+      `;
+    }
+    
     return `
       <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col h-full border border-slate-100 group">
         <div class="relative overflow-hidden aspect-square sm:aspect-auto sm:h-56">
@@ -51,13 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
         
         <div class="p-3 sm:p-5 flex flex-col flex-grow">
           <h2 class="text-sm sm:text-lg font-bold text-slate-800 leading-tight mb-1 line-clamp-2">${product.titulo_curadoria}</h2>
-          <p class="hidden sm:block text-sm text-slate-500 mb-3 line-clamp-2">${product.copy_venda}</p>
+          <p class="hidden sm:block text-sm text-slate-500 mb-2 line-clamp-2">${product.copy_venda}</p>
           
-          <div class="flex items-center gap-1 mb-2 sm:mb-4 flex-wrap">
+          <div class="flex items-center gap-1 mb-2 flex-wrap">
             <div class="flex">${generateStars(product.prova_social_nota)}</div>
             <span class="text-[10px] sm:text-xs font-bold text-slate-700 bg-amber-100 px-1 rounded">${product.prova_social_nota}</span>
             <span class="text-[10px] sm:text-xs text-slate-500 sm:ml-auto font-medium">${product.prova_social_vendas}</span>
           </div>
+          
+          ${triggerHtml}
           
           <div class="mt-auto pt-2 sm:pt-4 border-t border-slate-100">
             <div class="flex flex-col mb-3 sm:mb-4">
@@ -237,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
       
-      const response = await fetch('./public/data/catalogo.json');
+      const response = await fetch('/data/catalogo.json');
       
       if (!response.ok) {
         throw new Error('Falha ao carregar o catálogo');
