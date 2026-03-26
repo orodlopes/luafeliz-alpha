@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
       
-      const response = await fetch('/data/catalogo.json');
+      const response = await fetch('./data/catalogo.json');
       
       if (!response.ok) {
         throw new Error('Falha ao carregar o catálogo');
