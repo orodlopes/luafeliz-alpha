@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Meta tags essenciais de SEO -->
+    <title>Lua Feliz | Curadoria Inteligente de Ofertas</title>
+    <meta name="description" content="Descubra os melhores produtos com a curadoria da Lua Feliz. Ofertas exclusivas, decoração, tecnologia e muito mais com os melhores preços." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://luafeliz.com.br/" />
+
+    <!-- Open Graph tags para WhatsApp/Instagram -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://luafeliz.com.br/" />
+    <meta property="og:title" content="Lua Feliz | Curadoria de Produtos Incríveis" />
+    <meta property="og:description" content="Descubra os melhores produtos com a curadoria da Lua Feliz. Ofertas exclusivas selecionadas a dedo para você." />
+    <meta property="og:image" content="https://luafeliz.com.br/og-image.jpg" />
+    <meta property="og:site_name" content="Lua Feliz" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lua Feliz | Curadoria de Produtos Incríveis" />
+    <meta name="twitter:description" content="Descubra os melhores produtos com a curadoria da Lua Feliz. Ofertas exclusivas selecionadas a dedo para você." />
+    <meta name="twitter:image" content="https://luafeliz.com.br/og-image.jpg" />
+
+    <!-- [GOOGLE SEARCH CONSOLE VERIFICATION] -->
+    <!-- <meta name="google-site-verification" content="SUA_CHAVE_AQUI" /> -->
+
+    <!-- [GOOGLE ANALYTICS 4] -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+
+    <!-- [META PIXEL] -->
+    <!-- 
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'XXXXXXXXXXXXXXX');
+      fbq('track', 'PageView');
+    </script>
+    -->
+
+    <!-- [GOOGLE ADS REMARKETING] -->
+    <!-- 
+    <script>
+      gtag('config', 'AW-XXXXXXXXX');
+    </script>
+    -->
+
+    <!-- JSON-LD Schema.org (Exemplo de Produto) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Luminária Lua Cheia 3D Abajur Touch",
+      "image": [
+        "https://picsum.photos/seed/lua/800/800"
+      ],
+      "description": "Luminária em formato de lua cheia com tecnologia de impressão 3D, controle touch e ajuste de cores.",
+      "sku": "prod-001",
+      "brand": {
+        "@type": "Brand",
+        "name": "Lua Feliz Curadoria"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://luafeliz.com.br/produto/luminaria-lua-3d",
+        "priceCurrency": "BRL",
+        "price": "89.90",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "124"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuração do Tailwind -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
+    
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <div class="flex flex-col md:flex-row md:items-center gap-4 justify-between">
+          <a href="/" class="flex items-center gap-2 justify-center md:justify-start shrink-0">
+            <!-- Fallback text if image is missing -->
+            <img src="/public/cropped-loja-de-quebra-cabeca-lua-feliz-logo.png" alt="Lua Feliz" class="h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <span class="font-extrabold text-xl text-[#EE4D2D] hidden tracking-tight">LUA FELIZ</span>
+          </a>
+          
+          <!-- Search Bar -->
+          <div class="relative w-full md:max-w-md lg:max-w-lg" id="search-container">
+            <input type="text" id="search-input" placeholder="Buscar ofertas..." class="w-full pl-10 pr-4 py-2.5 border border-slate-300 rounded-full focus:outline-none focus:border-[#EE4D2D] focus:ring-1 focus:ring-[#EE4D2D] transition-colors shadow-sm text-sm" autocomplete="off">
+            <svg class="w-5 h-5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            
+            <!-- Auto-complete Dropdown -->
+            <ul id="search-dropdown" class="absolute w-full z-50 bg-white shadow-lg rounded-b-xl mt-1 hidden max-h-60 overflow-y-auto border border-slate-100 divide-y divide-slate-100"></ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Category Filters -->
+      <div class="border-t border-slate-100 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div id="category-filters" class="flex overflow-x-auto py-3 gap-3 no-scrollbar snap-x">
+            <!-- Categorias dinâmicas serão injetadas aqui via JS -->
+            <!-- Mockup estático inicial para evitar layout shift -->
+            <button class="category-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-colors border bg-[#EE4D2D] text-white border-[#EE4D2D] snap-start">Todos</button>
+            <button class="category-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-colors border bg-white text-slate-600 border-slate-200 snap-start">Fone de Ouvido</button>
+            <button class="category-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-colors border bg-white text-slate-600 border-slate-200 snap-start">Decoração</button>
+            <button class="category-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-colors border bg-white text-slate-600 border-slate-200 snap-start">Cozinha</button>
+            <button class="category-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-colors border bg-white text-slate-600 border-slate-200 snap-start">Smartwatch</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 w-full">
+      <div class="text-center md:text-left mb-6 sm:mb-10 hidden md:block">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-3">Curadoria Inteligente de Ofertas</h1>
+        <p class="text-slate-500 max-w-2xl text-lg md:mx-0 mx-auto">Selecionamos os melhores produtos com os maiores descontos da internet. Atualizado diariamente para você economizar com segurança.</p>
+      </div>
+
+      <!-- Product Grid -->
+      <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+        <!-- Cards serão injetados aqui via JS -->
+      </div>
+    </main>
+
+    <!-- Footer Simples -->
+    <footer class="bg-white border-t border-slate-200 mt-12 py-8">
+      <div class="max-w-7xl mx-auto px-4 text-center text-sm text-slate-500">
+        <p>&copy; 2026 Lua Feliz. Todos os direitos reservados.</p>
+        <p class="mt-2 text-xs">Os preços e a disponibilidade dos produtos são exatos no momento da atualização e estão sujeitos a alterações.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/src/app.js"></script>
+  </body>
+</html>
+

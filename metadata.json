@@ -1,0 +1,5 @@
+{
+  "name": "Lua Feliz Catálogo",
+  "description": "Catálogo estático de curadoria de produtos (Jamstack) com foco em SEO e performance.",
+  "requestFramePermissions": []
+}
