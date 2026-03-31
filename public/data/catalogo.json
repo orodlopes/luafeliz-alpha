@@ -1,56 +1,27 @@
 {
-  "produtos": [
-    {
-      "id": "prod-001",
-      "titulo_curadoria": "Luminária Lua Cheia 3D Abajur Touch",
-      "copy_venda": "Perfeita para decoração e iluminação aconchegante. Sucesso absoluto de vendas com controle touch e ajuste de cores.",
-      "preco_atual": 89.90,
-      "preco_antigo": 129.90,
-      "imagem_url": "https://picsum.photos/seed/lua/800/800",
-      "link_afiliado": "https://afiliado.exemplo.com/luminaria-lua-3d",
-      "prova_social_nota": 4.8,
-      "prova_social_vendas": "1.2k+ vendidos",
-      "data_atualizacao": "26/03/2026",
-      "categoria": "Decoração"
-    },
-    {
-      "id": "prod-002",
-      "titulo_curadoria": "Fone de Ouvido Bluetooth Pro",
-      "copy_venda": "Cancelamento de ruído ativo e bateria para o dia todo. Qualidade de som premium para suas músicas e chamadas.",
-      "preco_atual": 149.90,
-      "preco_antigo": 299.90,
-      "imagem_url": "https://picsum.photos/seed/fone/800/800",
-      "link_afiliado": "https://afiliado.exemplo.com/fone-pro",
-      "prova_social_nota": 4.9,
-      "prova_social_vendas": "5k+ vendidos",
-      "data_atualizacao": "26/03/2026",
-      "categoria": "Tecnologia"
-    },
-    {
-      "id": "prod-003",
-      "titulo_curadoria": "Garrafa Térmica Inox 1L",
-      "copy_venda": "Mantém sua bebida gelada por até 24h ou quente por 12h. Design moderno e resistente a quedas.",
-      "preco_atual": 65.00,
-      "preco_antigo": 99.90,
-      "imagem_url": "https://picsum.photos/seed/garrafa/800/800",
-      "link_afiliado": "https://afiliado.exemplo.com/garrafa-termica",
-      "prova_social_nota": 4.7,
-      "prova_social_vendas": "850+ vendidos",
-      "data_atualizacao": "26/03/2026",
-      "categoria": "Casa"
-    },
-    {
-      "id": "prod-004",
-      "titulo_curadoria": "Smartwatch Fitness Tracker",
-      "copy_venda": "Monitore seus treinos, batimentos cardíacos e receba notificações direto no pulso. Resistente à água.",
-      "preco_atual": 119.90,
-      "preco_antigo": 199.90,
-      "imagem_url": "https://picsum.photos/seed/relogio/800/800",
-      "link_afiliado": "https://afiliado.exemplo.com/smartwatch",
-      "prova_social_nota": 4.6,
-      "prova_social_vendas": "3.4k+ vendidos",
-      "data_atualizacao": "26/03/2026",
-      "categoria": "Tecnologia"
-    }
-  ]
+"vitrine_principal": {
+"titulo_secao": "Todos",
+"produtos": [
+{ "loja": "JX VERDE", "titulo_limpo": "Barbeador Profissional Kemei de Alta Precisão e Durabilidade", "preco_original": "206.88", "preco_atual": "86.89", "link": "https://s.shopee.com.br/9pa0u8qXuO", "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-mdc3mhao6z2925", "selo": "🔥 Top Vendas" },
+{ "loja": "yiyiyi", "titulo_limpo": "Máquina em Metal com LCD para Corte Profissional", "preco_original": "149.33", "preco_atual": "26.88", "link": "https://s.shopee.com.br/9fGahprBFN", "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-maivhh4gxtrt80", "selo": "🔥 Top Vendas" },
+{ "loja": "ZSZ_brasil", "titulo_limpo": "Aparador Profissional de Barba Resistente e Potente", "preco_original": "99.93", "preco_atual": "14.99", "link": "https://s.shopee.com.br/AACrIkpHEQ", "imagem": "https://cf.shopee.com.br/file/sg-11134201-7reow-m8eu3y5468x57e", "selo": "🔥 Top Vendas" }
+]
+},
+"mais_descobertas": {
+"titulo_secao": "Mais Descobertas",
+"produtos": [
+{ "loja": "JX VERDE", "titulo_limpo": "Barbeador Kemei Classic Bivolt para Uso Diário", "preco_original": "136.32", "preco_atual": "55.89", "link": "https://s.shopee.com.br/8ARmv4wtHy", "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-m9amodnp3v2a32", "selo": "⭐ Recomendado" },
+{ "loja": "P&H Oficial", "titulo_limpo": "Mini Barbeador de Bolso Portátil e Resistente", "preco_original": "80.38", "preco_atual": "16.88", "link": "https://s.shopee.com.br/8phTiIuLw2", "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-m9jqia3rp9tu7b", "selo": "⭐ Recomendado" },
+{ "loja": "@LVSHOP", "titulo_limpo": "Máquina Kemei 1990 Profissional para Corte Perfeito", "preco_original": "179.46", "preco_atual": "139.98", "link": "https://s.shopee.com.br/9UxAVWroaM", "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-m80lli9fyccx47", "selo": "⭐ Recomendado" },
+{ "loja": "yaya.br", "titulo_limpo": "Mini Barbeador à Prova D'água USB Tipo-C", "preco_original": "29.70", "preco_atual": "10.99", "link": "https://s.shopee.com.br/6VJYw13Efo", "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-m9akos3956wpf5", "selo": "⭐ Recomendado" },
+{ "loja": "MAIS LEGAL SHOP", "titulo_limpo": "Kit Completo Barbeador e Aparador Profissional 9 Peças", "preco_original": "79.99", "preco_atual": "55.99", "link": "https://s.shopee.com.br/8KlD7NwFwz", "imagem": "https://cf.shopee.com.br/file/sg-11134201-821dp-mgnuxsx7pyxa5c", "selo": "⭐ Recomendado" },
+{ "loja": "TOP LOJA jero", "titulo_limpo": "Máquina de Acabamento Kemei Profissional com Fio", "preco_original": "54.73", "preco_atual": "44.88", "link": "https://s.shopee.com.br/AKWHV3odtR", "imagem": "https://cf.shopee.com.br/file/sg-11134201-7req4-m2clh512lud4cb", "selo": "⭐ Recomendado" },
+{ "loja": "KAI.168", "titulo_limpo": "Aparador de Barba Portátil T100 Alta Performance", "preco_original": "99.92", "preco_atual": "50.96", "link": "https://s.shopee.com.br/9ztR6RpuZP", "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-maac2jbil0u144", "selo": "⭐ Recomendado" },
+{ "loja": "Miss Lin", "titulo_limpo": "Barbeador Elétrico Sem Fio Recarregável de Qualidade", "preco_original": "44.99", "preco_atual": "44.99", "link": "https://s.shopee.com.br/9KdkJDsRvL", "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-lu0uu2ry3tec07", "selo": "⭐ Recomendado" },
+{ "loja": "RISESHOP_brasil", "titulo_limpo": "Máquina de Barbear Sem Fio de Longa Duração", "preco_original": "38.15", "preco_atual": "20.98", "link": "https://s.shopee.com.br/8fO3VzuzH1", "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-loxvncqv3bkl2d", "selo": "⭐ Recomendado" },
+{ "loja": "JP Acessorio", "titulo_limpo": "Barbeador de Bolso Carregamento Rápido Tipo-C", "preco_original": "44.42", "preco_atual": "16.88", "link": "https://s.shopee.com.br/8V4dJgvcc0", "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-m8kkg420ssmp14", "selo": "⭐ Recomendado" },
+{ "loja": "FAST MO", "titulo_limpo": "Mini Aparador de Barba Premium à Prova D'água", "preco_original": "51.48", "preco_atual": "16.99", "link": "https://s.shopee.com.br/808MilxWcx", "imagem": "https://cf.shopee.com.br/file/br-11134207-820mf-ml90dak6df5ydd", "selo": "⭐ Recomendado" },
+{ "loja": "TOP SHOP ELETRONICO", "titulo_limpo": "Máquina de Cortar Barba Elétrica Designer Durável", "preco_original": "15.99", "preco_atual": "15.99", "link": "https://s.shopee.com.br/AUphhMo0YS", "imagem": "https://cf.shopee.com.br/file/sg-11134201-7repw-m1udq35ku98d62", "selo": "⭐ Recomendado" }
+]
+}
 }
