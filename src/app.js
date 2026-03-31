@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const grid = document.getElementById('product-grid');
+  const gridContainer = document.getElementById('product-grid');
   const searchInput = document.getElementById('search-input');
   const searchDropdown = document.getElementById('search-dropdown');
   const searchContainer = document.getElementById('search-container');
   const categoryContainer = document.getElementById('category-filters');
   
+  let allSections = [];
   let allProducts = [];
   let currentCategory = 'Todos';
   let searchTerm = '';
@@ -113,63 +114,115 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   };
 
-  const renderizarGrade = (produtos) => {
-    if (!produtos || produtos.length === 0) {
-      grid.innerHTML = `
-        <div class="col-span-full text-center py-16 bg-white rounded-xl border border-slate-100 shadow-sm">
-          <svg class="w-12 h-12 text-slate-300 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-          <p class="text-slate-500 font-medium text-lg">Nenhum produto encontrado.</p>
-          <p class="text-sm text-slate-400 mt-1">Tente buscar por outros termos ou limpar os filtros.</p>
-          <button id="btn-limpar-busca" class="mt-4 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition-colors">Limpar Busca</button>
-        </div>
-      `;
-      
-      const btnLimpar = document.getElementById('btn-limpar-busca');
-      if (btnLimpar) {
-        btnLimpar.addEventListener('click', () => {
-          if(searchInput) searchInput.value = '';
-          searchTerm = '';
-          currentCategory = 'Todos';
-          atualizarFiltrosVisuais();
-          filtrarProdutos();
-        });
-      }
-      return;
-    }
+  const renderEmptyState = () => {
+    gridContainer.innerHTML = `
+      <div class="col-span-full text-center py-16 bg-white rounded-xl border border-slate-100 shadow-sm w-full">
+        <svg class="w-12 h-12 text-slate-300 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <p class="text-slate-500 font-medium text-lg">Nenhum produto encontrado.</p>
+        <p class="text-sm text-slate-400 mt-1">Tente buscar por outros termos ou limpar os filtros.</p>
+        <button id="btn-limpar-busca" class="mt-4 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition-colors">Limpar Busca</button>
+      </div>
+    `;
     
-    grid.innerHTML = produtos.map(renderProductCard).join('');
-  };
-
-  const setupFiltrosDinamicos = (produtos) => {
-    // Extrair categorias únicas
-    const categorias = ['Todos', ...new Set(produtos.map(p => p.categoria).filter(Boolean))];
-    
-    if(categoryContainer) {
-      categoryContainer.innerHTML = categorias.map(cat => `
-        <button data-category="${cat}" class="category-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-colors border ${cat === currentCategory ? 'bg-[#EE4D2D] text-white border-[#EE4D2D]' : 'bg-white text-slate-600 border-slate-200 hover:border-[#EE4D2D] hover:text-[#EE4D2D]'} snap-start">
-          ${cat}
-        </button>
-      `).join('');
-
-      // Adicionar eventos de clique
-      const botoes = categoryContainer.querySelectorAll('.category-btn');
-      botoes.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          currentCategory = e.target.dataset.category;
-          
-          // Limpar busca ao clicar em categoria
-          if (searchTerm !== '') {
-            searchTerm = '';
-            if (searchInput) searchInput.value = '';
-          }
-          
-          atualizarFiltrosVisuais();
-          filtrarProdutos();
-          
-          if (searchDropdown) searchDropdown.classList.add('hidden');
-        });
+    const btnLimpar = document.getElementById('btn-limpar-busca');
+    if (btnLimpar) {
+      btnLimpar.addEventListener('click', () => {
+        if(searchInput) searchInput.value = '';
+        searchTerm = '';
+        currentCategory = 'Todos';
+        atualizarFiltrosVisuais();
+        renderizarVitrines();
       });
     }
+  };
+
+  const renderizarVitrines = () => {
+    gridContainer.innerHTML = '';
+    
+    // Se há busca, renderiza um grid plano com os resultados
+    if (searchTerm.trim() !== '') {
+      const term = searchTerm.toLowerCase().trim();
+      const filtrados = allProducts.filter(p => 
+        (p.titulo_curadoria && p.titulo_curadoria.toLowerCase().includes(term)) || 
+        (p.titulo_limpo && p.titulo_limpo.toLowerCase().includes(term)) ||
+        (p.copy_venda && p.copy_venda.toLowerCase().includes(term))
+      );
+      
+      if (filtrados.length === 0) {
+        renderEmptyState();
+        return;
+      }
+      
+      gridContainer.innerHTML = `
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold text-slate-800 mb-6">Resultados da Busca</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+            ${filtrados.map(renderProductCard).join('')}
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    // Se não há busca, renderiza as seções
+    let secoesParaRenderizar = allSections;
+    
+    if (currentCategory !== 'Todos') {
+      secoesParaRenderizar = allSections.filter(s => s.titulo_secao === currentCategory);
+    }
+    
+    if (secoesParaRenderizar.length === 0) {
+      renderEmptyState();
+      return;
+    }
+
+    const html = secoesParaRenderizar.map(secao => {
+      if (!secao.produtos || secao.produtos.length === 0) return '';
+      return `
+        <section class="mb-10 sm:mb-14">
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4 sm:mb-6 flex items-center gap-2">
+            <span class="w-1.5 h-6 bg-[#EE4D2D] rounded-full inline-block"></span>
+            ${secao.titulo_secao}
+          </h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+            ${secao.produtos.map(renderProductCard).join('')}
+          </div>
+        </section>
+      `;
+    }).join('');
+    
+    gridContainer.innerHTML = html || renderEmptyState();
+  };
+
+  const setupFiltrosDinamicos = () => {
+    if(!categoryContainer) return;
+    
+    const categorias = ['Todos', ...allSections.map(s => s.titulo_secao).filter(Boolean)];
+    
+    categoryContainer.innerHTML = categorias.map(cat => `
+      <button data-category="${cat}" class="category-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-colors border ${cat === currentCategory ? 'bg-[#EE4D2D] text-white border-[#EE4D2D]' : 'bg-white text-slate-600 border-slate-200 hover:border-[#EE4D2D] hover:text-[#EE4D2D]'} snap-start">
+        ${cat}
+      </button>
+    `).join('');
+
+    // Adicionar eventos de clique
+    const botoes = categoryContainer.querySelectorAll('.category-btn');
+    botoes.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        currentCategory = e.target.dataset.category;
+        
+        // Limpar busca ao clicar em categoria
+        if (searchTerm !== '') {
+          searchTerm = '';
+          if (searchInput) searchInput.value = '';
+        }
+        
+        atualizarFiltrosVisuais();
+        renderizarVitrines();
+        
+        if (searchDropdown) searchDropdown.classList.add('hidden');
+      });
+    });
   };
 
   const atualizarFiltrosVisuais = () => {
@@ -184,15 +237,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const renderDropdown = (produtos) => {
+  const renderDropdown = () => {
     if (!searchDropdown) return;
     
-    if (produtos.length === 0 || searchTerm.trim() === '') {
+    if (searchTerm.trim() === '') {
+      searchDropdown.classList.add('hidden');
+      return;
+    }
+    
+    const term = searchTerm.toLowerCase().trim();
+    const filtrados = allProducts.filter(p => 
+      (p.titulo_curadoria && p.titulo_curadoria.toLowerCase().includes(term)) || 
+      (p.titulo_limpo && p.titulo_limpo.toLowerCase().includes(term)) ||
+      (p.copy_venda && p.copy_venda.toLowerCase().includes(term))
+    ).slice(0, 5); // Limitar sugestões
+
+    if (filtrados.length === 0) {
       searchDropdown.classList.add('hidden');
       return;
     }
 
-    searchDropdown.innerHTML = produtos.map(p => `
+    searchDropdown.innerHTML = filtrados.map(p => `
       <li class="p-3 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors flex items-center gap-3" data-id="${p.id}">
         <span class="line-clamp-1">${p.titulo_curadoria}</span>
       </li>
@@ -210,32 +275,11 @@ document.addEventListener('DOMContentLoaded', () => {
           searchInput.value = selectedProduct.titulo_curadoria;
           searchTerm = selectedProduct.titulo_curadoria;
           
-          renderizarGrade([selectedProduct]);
+          renderizarVitrines();
           searchDropdown.classList.add('hidden');
         }
       });
     });
-  };
-
-  const filtrarProdutos = () => {
-    let filtrados = allProducts;
-
-    // Filtro por categoria
-    if (currentCategory !== 'Todos') {
-      filtrados = filtrados.filter(p => p.categoria === currentCategory);
-    }
-
-    // Filtro por busca (trabalha junto com a categoria)
-    if (searchTerm.trim() !== '') {
-      const term = searchTerm.toLowerCase().trim();
-      filtrados = filtrados.filter(p => 
-        (p.titulo_curadoria && p.titulo_curadoria.toLowerCase().includes(term)) || 
-        (p.copy_venda && p.copy_venda.toLowerCase().includes(term))
-      );
-    }
-
-    renderizarGrade(filtrados);
-    return filtrados;
   };
 
   // Event Listener para a busca
@@ -248,8 +292,8 @@ document.addEventListener('DOMContentLoaded', () => {
         atualizarFiltrosVisuais();
       }
       
-      const filtrados = filtrarProdutos();
-      renderDropdown(filtrados);
+      renderizarVitrines();
+      renderDropdown();
     });
   }
 
@@ -265,8 +309,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Buscar dados e inicializar
   const init = async () => {
     try {
-      grid.innerHTML = `
-        <div class="col-span-full flex justify-center py-12">
+      gridContainer.innerHTML = `
+        <div class="col-span-full flex justify-center py-12 w-full">
           <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-[#EE4D2D]"></div>
         </div>
       `;
@@ -278,15 +322,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       
       const data = await response.json();
-      allProducts = data.produtos || [];
       
-      setupFiltrosDinamicos(allProducts);
-      renderizarGrade(allProducts);
+      // Normalizar os dados (suporta array de seções ou objeto com chaves de categorias)
+      if (Array.isArray(data)) {
+        allSections = data;
+      } else if (typeof data === 'object' && data !== null) {
+        // Se for o formato antigo { "produtos": [...] }, converte para uma seção "Destaques"
+        if (data.produtos && Array.isArray(data.produtos)) {
+          allSections = [{ titulo_secao: "Destaques", produtos: data.produtos }];
+        } else {
+          // Se for um objeto com chaves de categorias
+          allSections = Object.values(data);
+        }
+      }
+      
+      // Extrair todos os produtos para a busca global
+      allProducts = allSections.reduce((acc, section) => {
+        if (section.produtos && Array.isArray(section.produtos)) {
+          return acc.concat(section.produtos);
+        }
+        return acc;
+      }, []);
+      
+      setupFiltrosDinamicos();
+      renderizarVitrines();
       
     } catch (error) {
       console.error('Erro:', error);
-      grid.innerHTML = `
-        <div class="col-span-full text-center py-12 text-red-600 bg-red-50 rounded-xl border border-red-100">
+      gridContainer.innerHTML = `
+        <div class="col-span-full text-center py-12 text-red-600 bg-red-50 rounded-xl border border-red-100 w-full">
           <svg class="w-10 h-10 mx-auto mb-2 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
           <p class="font-bold text-lg">Ops! Não foi possível carregar as ofertas.</p>
           <p class="text-sm mt-1 text-red-500">Por favor, verifique sua conexão e tente recarregar a página.</p>
