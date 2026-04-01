@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return `
       <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col h-full border border-slate-100 group">
         <div class="relative overflow-hidden aspect-square sm:aspect-auto sm:h-56">
-          <img src="${product.imagem_url}" alt="${product.titulo_curadoria}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          <img src="${product.imagem_url}" alt="${product.titulo_curadoria}" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           ${discount > 0 ? `<div class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-[#EE4D2D] text-white text-[10px] sm:text-xs font-bold px-2 py-1 rounded shadow-sm">-${discount}%</div>` : ''}
         </div>
         
