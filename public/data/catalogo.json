@@ -1,1 +1,147 @@
-[]
+[
+  {
+    "titulo_secao": "Todos",
+    "produtos": [
+      {
+        "loja": "yiyiyi",
+        "titulo_limpo": "Máquina Profissional Smart LCD Metal Premium",
+        "preco_original": "149.33",
+        "preco_atual": "26.88",
+        "link": "https://s.shopee.com.br/2g6rz59uVG",
+        "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-maivhh4gxtrt80",
+        "selo": "🔥 Top Vendas"
+      },
+      {
+        "loja": "ZSZ_brasil",
+        "titulo_limpo": "Barbeador Elétrico Aparador Profissional Alta Precisão",
+        "preco_original": "99.93",
+        "preco_atual": "14.99",
+        "link": "https://s.shopee.com.br/2qQIBO9HAJ",
+        "imagem": "https://cf.shopee.com.br/file/sg-11134201-7reow-m8eu3y5468x57e",
+        "selo": "🔥 Top Vendas"
+      },
+      {
+        "loja": "P&H  Oficial",
+        "titulo_limpo": "Mini Barbeador de Bolso Alta Durabilidade",
+        "preco_original": "80.38",
+        "preco_atual": "16.88",
+        "link": "https://s.shopee.com.br/qfDniGtDj",
+        "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-m9jqia3rp9tu7b",
+        "selo": "🔥 Top Vendas"
+      }
+    ]
+  },
+  {
+    "titulo_secao": "Mais Descobertas",
+    "produtos": [
+      {
+        "loja": "RISESHOP_brasil",
+        "titulo_limpo": "Máquina de Barbear Profissional Acabamento Premium",
+        "preco_original": "38.15",
+        "preco_atual": "20.98",
+        "link": "https://s.shopee.com.br/4LF5y93Z7Q",
+        "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-loxvncqv3bkl2d",
+        "selo": "⭐ Recomendado"
+      },
+      {
+        "loja": "JP Acessorio",
+        "titulo_limpo": "Barbeador Elétrico à Prova D'água Resistente",
+        "preco_original": "44.42",
+        "preco_atual": "16.88",
+        "link": "https://s.shopee.com.br/4VYWAS2vmT",
+        "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-m8kkg420ssmp14",
+        "selo": "⭐ Recomendado"
+      },
+      {
+        "loja": "JX VERDE",
+        "titulo_limpo": "Barbeador Kemei Classic Bivolt Alta Performance",
+        "preco_original": "136.14",
+        "preco_atual": "59.90",
+        "link": "https://s.shopee.com.br/40cFZX4pnO",
+        "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-m9amodnp3v2a32",
+        "selo": "⭐ Recomendado"
+      },
+      {
+        "loja": "MAIS LEGAL SHOP",
+        "titulo_limpo": "Kit Profissional Aparador de Barba Qualidade",
+        "preco_original": "79.99",
+        "preco_atual": "55.99",
+        "link": "https://s.shopee.com.br/4Avflq4CSR",
+        "imagem": "https://cf.shopee.com.br/file/sg-11134201-821dp-mgnuxsx7pyxa5c",
+        "selo": "⭐ Recomendado"
+      },
+      {
+        "loja": "TOP SHOP ELETRONICO",
+        "titulo_limpo": "Máquina de Barbear Profissional Designer Ergonômico",
+        "preco_original": "15.99",
+        "preco_atual": "15.99",
+        "link": "https://s.shopee.com.br/50UmlN11lc",
+        "imagem": "https://cf.shopee.com.br/file/sg-11134201-7repw-m1udq35ku98d62",
+        "selo": "⭐ Recomendado"
+      },
+      {
+        "loja": "FAST MO",
+        "titulo_limpo": "Mini Barbeador Portátil USB-C Longa Vida",
+        "preco_original": "52.75",
+        "preco_atual": "16.88",
+        "link": "https://s.shopee.com.br/5AoCxg0OQf",
+        "imagem": "https://cf.shopee.com.br/file/br-11134207-820mf-ml90dak6df5ydd",
+        "selo": "⭐ Recomendado"
+      },
+      {
+        "loja": "TOP LOJA  jero",
+        "titulo_limpo": "Máquina de Acabamento Kemei Pezinho Durável",
+        "preco_original": "54.78",
+        "preco_atual": "39.99",
+        "link": "https://s.shopee.com.br/4frwMl2IRa",
+        "imagem": "https://cf.shopee.com.br/file/sg-11134201-7req4-m2clh512lud4cb",
+        "selo": "⭐ Recomendado"
+      },
+      {
+        "loja": "JX VERDE",
+        "titulo_limpo": "Aparador Kemei 2299 Profissional Sem Fio",
+        "preco_original": "207.42",
+        "preco_atual": "82.97",
+        "link": "https://s.shopee.com.br/4qBMZ41f6d",
+        "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-mdc3mhao6z2925",
+        "selo": "⭐ Recomendado"
+      },
+      {
+        "loja": "KAI.168",
+        "titulo_limpo": "Máquina de Barba Profissional Portátil Resistente",
+        "preco_original": "99.92",
+        "preco_atual": "50.96",
+        "link": "https://s.shopee.com.br/30jiNh8dpI",
+        "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-maac2jbil0u144",
+        "selo": "⭐ Recomendado"
+      },
+      {
+        "loja": "@LVSHOP",
+        "titulo_limpo": "Maquininha Kemei 1990 Kit Alta Durabilidade",
+        "preco_original": "179.46",
+        "preco_atual": "139.98",
+        "link": "https://s.shopee.com.br/3B38a080UL",
+        "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-m80lli9fyccx47",
+        "selo": "⭐ Recomendado"
+      },
+      {
+        "loja": "Miss Lin",
+        "titulo_limpo": "Barbeador Recarregável Sem Fio Construção Robusta",
+        "preco_original": "44.99",
+        "preco_atual": "44.99",
+        "link": "https://s.shopee.com.br/3fzPAv66TU",
+        "imagem": "https://cf.shopee.com.br/file/br-11134207-7r98o-lu0uu2ry3tec07",
+        "selo": "⭐ Recomendado"
+      },
+      {
+        "loja": "FENG .",
+        "titulo_limpo": "Kemei KM-2299 Profissional de Alta Durabilidade",
+        "preco_original": "99.75",
+        "preco_atual": "79.80",
+        "link": "https://s.shopee.com.br/3qIpNE5T8X",
+        "imagem": "https://cf.shopee.com.br/file/br-11134207-81ztc-mjtzfe21bwubd5",
+        "selo": "⭐ Recomendado"
+      }
+    ]
+  }
+]
