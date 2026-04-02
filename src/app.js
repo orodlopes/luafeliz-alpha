@@ -86,10 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <h2 class="text-sm sm:text-lg font-bold text-slate-800 leading-tight mb-1 line-clamp-2">${product.titulo_curadoria}</h2>
           <p class="hidden sm:block text-sm text-slate-500 mb-2 line-clamp-2">${product.copy_venda}</p>
           
-          <div class="flex items-center gap-1 mb-2 flex-wrap">
-            <div class="flex">${generateStars(product.prova_social_nota)}</div>
-            <span class="text-[10px] sm:text-xs font-bold text-slate-700 bg-amber-100 px-1 rounded">${product.prova_social_nota}</span>
-            <span class="text-[10px] sm:text-xs text-slate-500 sm:ml-auto font-medium">${product.prova_social_vendas}</span>
+          <div class="flex items-center mb-2">
+            <span class="text-xs sm:text-sm text-slate-600 font-semibold bg-slate-100 px-2 py-0.5 rounded-full">🛍️ ${product.prova_social_vendas}</span>
           </div>
           
           ${triggerHtml}
