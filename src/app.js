@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="hidden sm:block text-sm text-slate-500 mb-2 line-clamp-2">${product.copy_venda}</p>
           
           <div class="flex items-center mb-2">
-            <span class="text-xs sm:text-sm text-slate-600 font-semibold bg-slate-100 px-2 py-0.5 rounded-full">🛍️ ${product.prova_social_vendas}</span>
+            <span class="text-[10px] sm:text-xs font-bold text-[#EE4D2D] bg-orange-50 border border-orange-100 px-2 py-0.5 rounded text-center line-clamp-1">${product.prova_social_vendas}</span>
           </div>
           
           ${triggerHtml}
@@ -102,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
               Ver Oferta
             </a>
             
-            <p class="hidden sm:flex text-[10px] text-center text-slate-400 mt-3 items-center justify-center gap-1">
+            <p class="flex text-[10px] text-center text-slate-400 mt-3 items-center justify-center gap-1">
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              Verificado em ${product.data_atualizacao}
+              Verificado em ${new Date().toLocaleDateString('pt-BR')}
             </p>
           </div>
         </div>
